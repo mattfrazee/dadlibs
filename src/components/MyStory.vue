@@ -1,5 +1,5 @@
 <template>
-  <div class="story-container">
+  <div class="story-container" :class="{'adult': story.adult}">
     <h2>{{ story.title }}</h2>
     <p class="first-letter:uppercase" v-html="content"></p>
     <div class="button-container">
@@ -19,6 +19,9 @@ export default {
   computed: {
     content() {
       let story = this.story.story
+      if (!story) {
+        return null
+      }
       const regexp = /\[([a-z -_][^\]]+)\]/g;
       [...story.matchAll(regexp)].forEach((question, id) => {
         if (this.answers[id]) {
@@ -41,13 +44,21 @@ export default {
 
 <style>
 .highlight {
-  @apply rounded bg-yellow-300 text-black font-bold underline inline-block px-1 mx-1 transition-all duration-500 ease-in-out scale-100 hover:scale-125
+  @apply relative rounded bg-yellow-300 text-black font-bold underline inline-block px-1 mx-1 transition-all duration-500 ease-in-out scale-100 hover:scale-125 hover:z-[1] hover:shadow-lg
+}
+
+.adult .highlight {
+  @apply bg-red-500 text-white
 }
 </style>
 
 <style scoped>
 .story-container {
   @apply min-h-full pt-16 pb-24 px-4 overflow-auto bg-blue-600 overflow-auto text-white;
+}
+
+.story-container.adult {
+  @apply bg-slate-800
 }
 
 h2 {
@@ -62,8 +73,16 @@ p {
   @apply bg-blue-400 grid grid-cols-2 gap-x-6 p-6 fixed bottom-0 left-0 w-full
 }
 
+.adult .button-container {
+  @apply bg-red-600
+}
+
 button {
-  @apply bg-blue-300 text-blue-600 block p-4 text-base uppercase rounded-lg font-bold
+  @apply bg-blue-300 text-blue-600 block p-4 text-base uppercase rounded-lg font-bold shadow-lg
+}
+
+.adult button {
+  @apply bg-red-500 text-red-900
 }
 
 </style>
