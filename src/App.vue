@@ -8,9 +8,17 @@
     </template>
   </story-menu>
 
-  <story-input v-if="myStory && !myStory.complete" :story="myStory" :questions="questions" :answers="myAnswers" v-on:add-answer="addAnswer"></story-input>
+  <story-input v-if="myStory && !myStory.complete"
+               :story="myStory"
+               :questions="questions"
+               :answers="myAnswers"
+               v-on:add-answer="addAnswer"></story-input>
 
-  <my-story v-if="myStory && myStory.complete" :story="myStory" :answers="myAnswers" v-on:finish-story="startOver" v-on:start-story="startStory"></my-story>
+  <my-story v-if="myStory && myStory.complete"
+            :story="myStory"
+            :answers="myAnswers"
+            v-on:finish-story="startOver"
+            v-on:start-story="startStory"></my-story>
 
 </template>
 

@@ -41,7 +41,7 @@ nav {
 }
 .logo {
   font-family: Fjalla One;
-  @apply text-4xl text-left pt-2 leading-none flex items-center justify-center
+  @apply text-4xl text-left pt-2 leading-none flex items-center justify-center cursor-pointer
 }
 button {
   @apply w-8 h-8 leading-[0] text-[0px]

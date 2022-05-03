@@ -1,7 +1,7 @@
 <template>
   <div class="story-input-container" :class="{'adult': story.adult}">
     <div>
-      <input :type="question.id === 'number' ? 'number' : 'text'"
+      <input :type="inputType"
              ref="answer"
              v-model="answer"
              v-on:keyup.enter="addAnswer"
@@ -19,9 +19,9 @@
       <p class="story-input-description">
         {{ question.description }}
       </p>
-      <button type="button" @click="addAnswer">
+      <story-button @click="addAnswer" :adult="story.adult" class="mb-8">
         {{ !isLastQuestion ? 'Next' : 'Complete'}}
-      </button>
+      </story-button>
       <div class="question-status">
         <p>Word {{ totalAnswers + 1 }} of {{ totalQuestions }}</p>
       </div>
@@ -30,8 +30,10 @@
 </template>
 
 <script>
+import StoryButton from "@/components/StoryButton";
 export default {
   name: "StoryInput",
+  components: { StoryButton },
   props: {
     answers: Array,
     questions: Object,
@@ -52,6 +54,11 @@ export default {
     },
   },
   computed: {
+    //TODO: change input type from question (handle iOS keyboard switch from qwerty to numeric)
+    inputType() {
+      return 'text'
+      // return this.question.id === 'number' ? 'tel' : 'text'
+    },
     isLastQuestion() {
       return this.answers.length === this.questions.length - 1
     },
@@ -88,14 +95,6 @@ export default {
 
 .story-input {
   @apply p-2 text-3xl rounded-none outline-none ring-0 bg-transparent text-center text-white border-blue-300 border-b-2 block mx-auto w-full sm:w-3/4
-}
-
-button {
-  @apply p-4 text-base font-bold bg-blue-400 rounded-lg text-blue-900 text-center leading-6 shadow-lg block mx-auto w-full sm:w-1/2 mb-8 p-4 text-base uppercase
-}
-
-.adult button {
-  @apply bg-red-500 text-red-900
 }
 
 .adult .story-input {

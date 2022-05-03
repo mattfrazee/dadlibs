@@ -3,15 +3,22 @@
     <h2>{{ story.title }}</h2>
     <p class="first-letter:uppercase" v-html="content"></p>
     <div class="button-container">
-      <button class="retry" type="button" @click="start">Retry</button>
-      <button class="finish" type="button" @click="finish">Finish</button>
+      <story-button @click="start" :adult="story.adult">
+        Retry
+      </story-button>
+      <story-button @click="finish" :adult="story.adult">
+        Finish
+      </story-button>
     </div>
   </div>
 </template>
 
 <script>
+import StoryButton from "@/components/StoryButton";
+
 export default {
   name: "MyStory",
+  components: {StoryButton},
   props: {
     answers: Array,
     story: Object,
@@ -70,19 +77,11 @@ p {
 }
 
 .button-container {
-  @apply bg-blue-400 grid grid-cols-2 gap-x-6 p-6 fixed bottom-0 left-0 w-full
+  @apply bg-blue-500 grid grid-cols-2 gap-x-6 p-6 fixed bottom-0 left-0 w-full
 }
 
 .adult .button-container {
   @apply bg-red-600
-}
-
-button {
-  @apply bg-blue-300 text-blue-600 block p-4 text-base uppercase rounded-lg font-bold shadow-lg
-}
-
-.adult button {
-  @apply bg-red-500 text-red-900
 }
 
 </style>
