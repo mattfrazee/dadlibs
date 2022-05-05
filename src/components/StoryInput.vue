@@ -19,7 +19,7 @@
       <p class="story-input-description">
         {{ question.description }}
       </p>
-      <story-button @click="addAnswer" :adult="story.adult" class="mb-8">
+      <story-button @click="addAnswer" :adult="story.adult" class="mb-8 block mx-auto">
         {{ !isLastQuestion ? 'Next' : 'Complete'}}
       </story-button>
       <div class="question-status">

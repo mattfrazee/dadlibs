@@ -146,5 +146,11 @@ export default {
             description: "A living being who is your friend.",
             example: "my dog, Dann, cable guy, neighbor",
         },
+        {
+            id: "person-in-room",
+            label: "Someone in the Room",
+            description: "A living being who is in the room right now.",
+            example: "my dog, John, mom, neighbor",
+        },
     ]
 }

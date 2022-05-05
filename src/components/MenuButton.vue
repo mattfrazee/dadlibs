@@ -1,5 +1,5 @@
 <template>
-  <story-button :class="{'adult': adult }">
+  <story-button class="block mx-auto" :class="{'adult': adult }">
     <span>
       <slot></slot>
       <span v-if="adult" class="block font-normal text-xs opacity-50 italic">(Adult)</span>
@@ -12,6 +12,7 @@
 
 <script>
 import StoryButton from "@/components/StoryButton";
+
 export default {
   name: "MenuButton",
   components: {StoryButton},
@@ -25,14 +26,17 @@ export default {
 
 <style scoped>
 button {
-  @apply flex justify-between text-left hover:bg-blue-300 transition-all duration-500 ease-in scale-100 hover:scale-110
+  @apply flex justify-between text-left hover:bg-blue-300 transition-all duration-500 ease-in scale-100 hover:scale-110 sm:hover:scale-105
 }
+
 button.adult {
-  @apply bg-slate-900 text-white
+  @apply bg-slate-900 text-white hover:bg-slate-800
 }
+
 svg {
   @apply fill-current w-6 h-6 text-yellow-300 ml-2
 }
+
 .adult svg {
   @apply text-red-500
 }

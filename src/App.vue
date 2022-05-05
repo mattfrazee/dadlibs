@@ -2,6 +2,13 @@
 
   <nav-header header-text="DadLibs" v-on:start-over="startOver" v-on:toggle-menu="showAdult=!showAdult" :toggle="showAdult"></nav-header>
 
+  <story-categories
+      header="Select a Category"
+      v-on:select-category="selectCategory"
+      :stories="sortedStories"
+      :category-selected="selectedCategory"
+      class="hidden"></story-categories>
+
   <story-menu header="Select a Story" v-if="!myStory">
     <template v-for="story in sortedStories" :key="story">
       <menu-button :adult="story.adult" v-if="story.title && story.story" :complete="story.complete" @click="selectStory(story)">{{ story.title }}</menu-button>
@@ -23,10 +30,11 @@
 </template>
 
 <script>
-import NavHeader from '@/components/NavHeader.vue'
 import MenuButton from "@/components/MenuButton";
-import Speech from "@/components/Speech";
 import MyStory from "@/components/MyStory";
+import NavHeader from '@/components/NavHeader.vue'
+import Speech from "@/components/Speech";
+import StoryCategories from "@/components/StoryCategories";
 import StoryMenu from "@/components/StoryMenu";
 import StoryInput from "@/components/StoryInput";
 
@@ -36,6 +44,7 @@ export default {
     NavHeader,
     MenuButton,
     MyStory,
+    StoryCategories,
     StoryInput,
     StoryMenu,
   },
@@ -44,14 +53,9 @@ export default {
       return text.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
     },
   },
-  beforeMount() {
+  // beforeMount() {
     // this.myStory = this.stories[0]
-    // console.log(this.questions)
-    // console.log(this.story)
-    // console.log(this.parseQuestion('noun'))
-    // console.log(this.parseQuestion('noun|plural|A special noun|With a special description.'))
-    // console.log(this.parseQuestion('foods||my food label|some description|food example'))
-  },
+  // },
   computed: {
     questions() {
       const regexp = /\[(.[^\]]+)\]/g
@@ -74,6 +78,26 @@ export default {
         this.myStory.complete = this.myAnswers.length === this.questions.length
       }
     },
+    goto(place) {
+      switch (place){
+        default:
+        case 'home':
+          this.startOver()
+          break
+        case 'select-category':
+          this.startOver()
+          break
+        case 'select-story':
+          this.startOver()
+          break
+        case 'start-story':
+          this.startStory()
+          break
+        case 'view-story':
+          this.startOver()
+          break
+      }
+    },
     parseQuestion(question) {
       const arr = question.split('|')
       const id = arr[0]
@@ -92,6 +116,9 @@ export default {
       this.myStory = story
       this.myStory.complete = false
     },
+    selectCategory(category) {
+      this.selectedCategory = category
+    },
     startOver() {
       this.myStory = null
       this.myAnswers = []
@@ -105,6 +132,7 @@ export default {
     return {
       myStory: null,
       myAnswers: [],
+      selectedCategory: null,
       showAdult: false,
       stories: [
         {
@@ -114,7 +142,7 @@ export default {
               "“Oh!?” I have never owned a [noun] before. I [verb|past-tense] once before, but not as [adjective] as [relative]’s.",
         },
         {
-          title: "Bats, Bats, Bats!", adult: false,
+          title: "Bats, Bats, Bats!", adult: false, category:'animals',
           story: "Bats are [adjective] animals which have wings. They like to [verb] around at [time] " +
               "which makes some people scared of them. But bats are really [adjective], " +
               "and they don't want to hurt people. I have a pet bat that lives in [place]. " +
@@ -122,7 +150,7 @@ export default {
               "I want to convince my [relative] to get me [number] more bat(s).",
         },
         {
-          title: 'The American Beaver', adult: false,
+          title: 'The American Beaver', adult: false, category:'animals', image: 'img/American_Beaver.jpeg',
           story: 'Beavers eat soft [food] when available, but they prefer [noun|plural] found near streams. ' +
               'At the Zoo, beavers eat [food], [food], and even [noun|plural]. ' +
               'Female beavers are believed to be [adjective] animals. Some think males may [verb] with more than one female. ' +
@@ -130,7 +158,7 @@ export default {
               'Kits born in the [place] will usually only stay for about [number] year(s) before leading independent adult lives.',
         },
         {
-          title: 'The Komodo Dragon', adult: false,
+          title: 'The Komodo Dragon', adult: false, category:'animals',
           story: 'Komodo dragons are [adjective] predators, because of the [adjective] bacteria in their mouths. ' +
               'The Komodo dragon’s [adjective] tail is capable of [verb|ing] a deadly blow to an opponent. ' +
               'The Komodo dragon preys on [animal|plural], [animal|plural], and even [animal|plural]. ' +
@@ -138,7 +166,7 @@ export default {
               'Adult females average [number] feet long and weigh about [number] pounds.'
         },
         {
-          title: 'It‘s All About the Meerkats', adult: false,
+          title: 'It‘s All About the Meerkats', adult: false, category:'animals', image: 'img/meerkat.jpg',
           story: 'Meerkats live in the Kalahari desert which is in the southern part of [place]. ' +
               'Meerkats are [adjective] animals that live in colonies of up to [number] animal(s).'
         },
@@ -156,13 +184,13 @@ export default {
               'The most important thing about catching Pokémon is to have a [adjective] time.'
         },
         {
-          title: 'Dog Gone It', adult: true,
+          title: 'Dog Gone It', adult: true, category:'Adult',
           story: '“[cuss-word]!”, [relative] shouted. My mouth was full of [drink] and I couldn’t talk. ' +
               'On top of that, [friend], will not stop trying to [verb] my [noun]. I reached over and grabbed my [noun] to stop them. ' +
               'But it was too late, my [noun] was gone and all that was left behind was a [adjective] [noun]. '
         },
         {
-          title: 'Oh My God', adult: true,
+          title: 'Oh My God', adult: true, category:'Adult',
           story: 'I could not believe my eyes, his [body-part] was so big. ' +
               'I instantly became [emotion] and I wanted to [verb] him so hard. ' +
               'I grabbed his [body-part] and I told him to take me to the [place] and [verb] me. ' +
@@ -178,13 +206,20 @@ export default {
               'It blasted a hole in the wall and there was nothing left of [pokémon character|||The name of a Pokémon character.|Pikachu, Gangar, Charzard, Rowlet]'
         },
         {
-          title: 'Lorem ipsum dolor sit amet', category:'', adult: false,
-          story: '[Lorem ipsum] dolor sit amet, consectetur adipisicing elit. Aliquid debitis enim esse ex illum necessitatibus optio rem sed voluptas? Accusantium consequuntur eligendi est inventore laudantium maiores neque nihil, quaerat similique?'
+          title: 'Lorem ipsum dolor sit amet', category:'Development', adult: false,
+          story: '[Lorem ipsum|plural||Some description about it|lorem, ipsum, dolor, sit] dolor sit amet, consectetur adipisicing elit. Aliquid debitis enim esse ex illum necessitatibus optio rem sed voluptas? Accusantium consequuntur eligendi est inventore laudantium maiores neque nihil, quaerat similique?'
         },
-        {title: 'A Day in November', category:'Kids', story: 'It was a [adjective], cold November day. I woke up to the smell of [type of bird|plural||A type or name of a bird.|chicken, oriole, parrot, blue jay] ' +
+        {
+          title: 'Lorem ipsum dolor sit amet 2', category:'Development', adult: true,
+          story: '[Lorem ipsum|plural||Some description about it|lorem, ipsum, dolor, sit] dolor sit amet, consectetur adipisicing elit. Aliquid debitis enim esse ex illum necessitatibus optio rem sed voluptas? Accusantium consequuntur eligendi est inventore laudantium maiores neque nihil, quaerat similique?'
+        },
+        {
+          title: 'A Day in November', category:'Kids', adult: false,
+          story: 'It was a [adjective], cold November day. I woke up to the smell of [type of bird|plural||A type or name of a bird.|chicken, oriole, parrot, blue jay] ' +
               'roasting in the [room in a house|||A room in a house.|living room, kitchen, bathroom, garage] downstairs. I [verb|past-tense] down the stairs to see if I could help [verb] the food. ' +
               'My mom said, “See if [relative] needs a fresh [noun].” So I carried a tray of glasses full of [liquid] into the [verb|ing] room. When I got there, I couldn’t believe my [body-part]! ' +
-              'There were [noun|plural] [verb|ing] on the [noun]!', adult: false},
+              'There were [noun|plural] [verb|ing] on the [noun]!'
+        },
         {title: '', category:'', story: '', adult: false},
       ],
     };

@@ -2,6 +2,11 @@
   <div class="story-container" :class="{'adult': story.adult}">
     <h2>{{ story.title }}</h2>
     <p class="first-letter:uppercase" v-html="content"></p>
+    <img
+        v-if="story.image"
+        :src="story.image"
+        :alt="story.title"
+        class="object-fill rounded-lg mx-auto shadow-lg rotate-2 mb-14">
     <div class="button-container">
       <story-button @click="start" :adult="story.adult">
         Retry
@@ -61,7 +66,7 @@ export default {
 
 <style scoped>
 .story-container {
-  @apply min-h-full pt-16 pb-24 px-4 overflow-auto bg-blue-600 overflow-auto text-white;
+  @apply min-h-full pt-16 pb-24 px-4 overflow-auto bg-blue-600 overflow-auto text-white
 }
 
 .story-container.adult {
@@ -69,10 +74,12 @@ export default {
 }
 
 h2 {
+  /*font-family: 'Source Serif Pro';*/
   @apply text-5xl font-bold mb-5 mt-8
 }
 
 p {
+  /*font-family: 'Overpass';*/
   @apply text-2xl mb-6 leading-10
 }
 
