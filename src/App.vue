@@ -1,18 +1,30 @@
 <template>
 
-  <nav-header header-text="DadLibs" v-on:start-over="startOver" v-on:toggle-menu="showAdult=!showAdult" :toggle="showAdult"></nav-header>
+  <nav-header
+      :stories="sortedStories"
+      header-text="DadLibs"
+      @start-over="startOver"
+      @toggle-menu="showAdult=!showAdult"
+      :toggle="showAdult"></nav-header>
 
   <story-categories
       header="Select a Category"
-      v-on:select-category="selectCategory"
+      v-if="canShowCategories"
+      @select-category="selectCategory"
       :stories="sortedStories"
-      :category-selected="selectedCategory"
-      class="hidden"></story-categories>
+      :category-selected="selectedCategory"></story-categories>
 
-  <story-menu header="Select a Story" v-if="!myStory">
+  <story-menu header="Select a Story" v-if="canShowStoryMenu">
     <template v-for="story in sortedStories" :key="story">
-      <menu-button :adult="story.adult" v-if="story.title && story.story" :complete="story.complete" @click="selectStory(story)">{{ story.title }}</menu-button>
+      <menu-button
+          v-if="story.title && story.story"
+          :adult="story.adult"
+          :complete="story.complete"
+          @click="selectStory(story)">{{ story.title }}</menu-button>
     </template>
+    <menu-button class="go-back"
+        v-if="sortedStories.length"
+        @click="selectedCategory = null">Go Back</menu-button>
   </story-menu>
 
   <story-input v-if="myStory && !myStory.complete"
@@ -57,6 +69,17 @@ export default {
     // this.myStory = this.stories[0]
   // },
   computed: {
+    canShowCategories() {
+      return this.selectedCategory === null
+    },
+    canShowStoryMenu() {
+      return !this.myStory && this.selectedCategory !== null
+    },
+    canShowStoryInput() {
+      return this.myStory !== null
+          && this.selectedCategory !== null
+          && !this.myStory.complete
+    },
     questions() {
       const regexp = /\[(.[^\]]+)\]/g
       return [...this.myStory.story.matchAll(regexp)].map( question => {
@@ -65,6 +88,9 @@ export default {
     },
     sortedStories() {
       let arr = this.stories
+      if (this.selectedCategory && this.selectedCategory !== 'all') {
+        arr = arr.filter(story => story.category && story.category.toLowerCase() === this.selectedCategory)
+      }
       if (!this.showAdult) {
         arr = arr.filter(story => story.adult !== true)
       }
@@ -220,9 +246,16 @@ export default {
               'My mom said, “See if [relative] needs a fresh [noun].” So I carried a tray of glasses full of [liquid] into the [verb|ing] room. When I got there, I couldn’t believe my [body-part]! ' +
               'There were [noun|plural] [verb|ing] on the [noun]!'
         },
-        {title: '', category:'', story: '', adult: false},
+        {title: '', category:'', story: '', adult: false, image:null},
+        {title: '', category:'', story: '', adult: false, image:null},
       ],
     };
   }
 }
 </script>
+
+<style scoped>
+.go-back {
+  @apply justify-center bg-blue-900 hover:bg-blue-800 text-white sm:w-60
+}
+</style>

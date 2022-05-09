@@ -2,8 +2,14 @@
   <div class="categories-container">
     <h2>{{ header }}</h2>
     <div class="categories">
+<!--      <story-button @click="selectCategory('all')" class="all">-->
+<!--        All Categories-->
+<!--      </story-button>-->
       <story-button v-for="category in categories" :key="category" @click="selectCategory(category)">
         {{ category }}
+      </story-button>
+      <story-button @click="selectCategory('all')" class="all">
+        All Categories
       </story-button>
     </div>
     <p v-if="categorySelected">Selection: {{ categorySelected }}</p>
@@ -71,6 +77,10 @@ h2 {
 }
 
 button {
-  @apply capitalize min-h-[12rem] h-full w-full text-2xl
+  @apply capitalize min-h-[6rem] sm:min-h-[12rem] h-full w-full text-lg md:text-2xl
+}
+
+.all {
+  @apply text-white bg-blue-900 hover:bg-blue-800
 }
 </style>
