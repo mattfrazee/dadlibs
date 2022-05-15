@@ -93,6 +93,36 @@ export default {
             example: "noon, 3:30pm, dinner time, midnight",
         },
         {
+            id: "thing",
+            label: "Thing",
+            description: "A material object or idea",
+            example: "the blob, paint, boogeyman, snow",
+        },
+        {
+            id: "taste",
+            label: "Taste",
+            description: "Something you can taste.",
+            example: "snot, chocolate, bbq chicken, carrot",
+        },
+        {
+            id: "holiday",
+            label: "Holiday",
+            description: "Any celebrated or non-celebrated holiday",
+            example: "easter, thanksgiving, christmas, pi day",
+        },
+        {
+            id: "color",
+            label: "Color",
+            description: "Any color",
+            example: "red, blue, white, gray",
+        },
+        {
+            id: "made-up-word",
+            label: "Made Up Word",
+            description: "A word that is not in the dictionary.",
+            example: "Habble, whark, mobify, bloatware",
+        },
+        {
             id: "drink",
             label: "Drinkable Liquid",
             description: "Anything that is considered drinkable.",

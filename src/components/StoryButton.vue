@@ -15,7 +15,8 @@ export default {
 
 <style scoped>
 button {
-  @apply w-full sm:w-3/4 md:w-1/2 lg:w-1/4 p-4 text-base font-bold leading-6 bg-blue-400 rounded-lg text-blue-900 shadow-lg hover:bg-blue-300 transition-all duration-500 ease-in
+  @apply p-4 text-base font-bold leading-6 bg-blue-400 rounded-lg text-blue-900 shadow-lg hover:bg-blue-300 transition-all duration-500 ease-in
+  /*@apply w-full sm:w-3/4 md:w-1/2 lg:w-1/4 p-4 text-base font-bold leading-6 bg-blue-400 rounded-lg text-blue-900 shadow-lg hover:bg-blue-300 transition-all duration-500 ease-in*/
 }
 
 button.adult {
