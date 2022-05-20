@@ -159,6 +159,36 @@ export default {
             example: "doggystyle, reverse cowgirl, dirty trombone, double fisting",
         },
         {
+            id: "word-for-sex",
+            label: "A Word for Sex",
+            description: "An alternate word for sex.",
+            example: "fuck, bang, smash, pound",
+        },
+        {
+            id: "word-for-breasts",
+            label: "A Word for Breasts",
+            description: "An alternate word for breasts.",
+            example: "tits, boobies, rack, honkers",
+        },
+        {
+            id: "word-for-semen",
+            label: "A Word for Semen",
+            description: "An alternate word for semen.",
+            example: "cum, jizz, splooge, white stuff",
+        },
+        {
+            id: "female-reproductive-organ",
+            label: "A Name for a Female Reproductive Organ",
+            description: "Another word to call the vagina.",
+            example: "pussy, box, cunt, snatch",
+        },
+        {
+            id: "male-reproductive-organ",
+            label: "A Name for a Male Reproductive Organ",
+            description: "Another word to call the penis.",
+            example: "dick, cock, schlong, monster",
+        },
+        {
             id: "race",
             label: "Ethnicity/Race",
             description: "The heritage of a person or a color of skin.",

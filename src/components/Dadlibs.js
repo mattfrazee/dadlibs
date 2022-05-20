@@ -101,6 +101,12 @@ export default {
                 'We’re sorry for any inconvenience this caused. Since you were ordering these for a party to celebrate [holiday], ' +
                 'we would like to offer you [noun]-shaped truffles at a discount of [number] dollars instead.'
         },
+        {
+            title: 'Dirty Talk', category:'Adult', adult: true, image:null,
+            story: '[word-for-sex] my [female-reproductive-organ] with your [adjective] [adjective] [male-reproductive-organ] until you pump my [adjective] [female-reproductive-organ] full of your [adjective] ' +
+                '[word-for-semen]. Then slide your [adjective] [male-reproductive-organ] between my [word-for-breasts] until it\'s [adjective] again and ram it back into my [adjective] [female-reproductive-organ]. ' +
+                'I want it [adjective] and [adjective] and I want you to fill me up with [word-for-semen] again and again.'
+        },
         {title: '', category:'', adult: false, image:null, story: ''},
     ],
 }
