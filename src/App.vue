@@ -2,9 +2,11 @@
 
   <nav-header
       :stories="sortedStories"
+      :story="myStory"
+      :answers="myAnswers"
       header-text="DadLibs"
       @start-over="startOver"
-      @toggle-menu="showAdult=!showAdult"
+      @toggle-adult-menu="showAdult=!showAdult"
       :toggle="showAdult"></nav-header>
 
   <story-categories
@@ -45,7 +47,7 @@
 <script>
 import MenuButton from "@/components/MenuButton";
 import MyStory from "@/components/MyStory";
-import NavHeader from '@/components/NavHeader.vue'
+import NavHeader from '@/components/AppHeader.vue'
 import Speech from "@/components/Speech";
 import Dadlibs from "@/components/Dadlibs";
 import StoryCategories from "@/components/StoryCategories";
@@ -130,6 +132,11 @@ export default {
       }
     },
     parseQuestion(question) {
+      // [speech key | option | label | description | example]
+      // examples:
+      // [noun|plural]
+      // [cat||A Type of Cat]
+      // [noun|plural|A Noun|Some description...|Matt, bug, USA, money]
       const arr = question.split('|')
       const id = arr[0]
       const param = arr[1] ? Speech.options.filter(opt => opt.id === arr[1])[0].label : ''

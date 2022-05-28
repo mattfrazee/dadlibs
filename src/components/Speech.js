@@ -5,6 +5,14 @@ export default {
             label: "Ending in ING",
         },
         {
+            id: "ly",
+            label: "Ending in LY",
+        },
+        {
+            id: "ed",
+            label: "Ending in ED",
+        },
+        {
             id: "past-tense",
             label: "Past Tense",
         },
@@ -41,7 +49,7 @@ export default {
         {
             id: "adverb",
             label: "Adverb",
-            description: "An adverb modifies or describes a verb, an adjective, or another adverb.",
+            description: "Usually ending in “ly”, an adverb modifies or describes a verb, an adjective, or another adverb.",
             example: "gently, extremely, carefully, well",
         },
         {
@@ -87,6 +95,12 @@ export default {
             example: "lasanga, bread, egg yolk, deer",
         },
         {
+            id: "instrument",
+            label: "Instrument",
+            description: "Something that is used to create music.",
+            example: "bass, drums, triangle, cowbell",
+        },
+        {
             id: "time",
             label: "Time of Day",
             description: "Any time of day.",
@@ -121,6 +135,12 @@ export default {
             label: "Made Up Word",
             description: "A word that is not in the dictionary.",
             example: "Habble, whark, mobify, bloatware",
+        },
+        {
+            id: "silly-word",
+            label: "A Silly Word",
+            description: "A word that sounds silly",
+            example: "bubbles, squishy, snarf, booger",
         },
         {
             id: "drink",

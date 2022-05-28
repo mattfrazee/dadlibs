@@ -46,7 +46,7 @@ export default {
         {
             title: 'The Pokémon Trainer', adult: false, category:'Pokémon',
             story: 'Hey, [player name|||A name for the main character.|Jane, Matt, Shadow Walker, jerk], do you think you have what it takes to be a Pokémon trainer? ' +
-                'Level up your [pokémon character|||The name of a Pokémon character.|Pikachu, Gangar, Charzard, Rowlet] by attacking your opponents [noun]. ' +
+                'Level up your [pokémon character|||The name of a Pokémon character.|Pikachu, Gengar, Charzard, Rowlet] by attacking your opponents [noun]. ' +
                 'Go to the [place] to find new Pokémon and catch them all. Watch out, your Pokémon has [adjective] and [adjective] all over his [body-part]. ' +
                 'Defeat your enemies with [noun] attacks but be careful to not let your Pokémon faint or you will have to go to a [place] to heal them. ' +
                 'The most important thing about catching Pokémon is to have a [adjective] time.'
@@ -106,6 +106,11 @@ export default {
             story: '[word-for-sex] my [female-reproductive-organ] with your [adjective] [adjective] [male-reproductive-organ] until you pump my [adjective] [female-reproductive-organ] full of your [adjective] ' +
                 '[word-for-semen]. Then slide your [adjective] [male-reproductive-organ] between my [word-for-breasts] until it\'s [adjective] again and ram it back into my [adjective] [female-reproductive-organ]. ' +
                 'I want it [adjective] and [adjective] and I want you to fill me up with [word-for-semen] again and again.'
+        },
+        {
+            title: 'Here kitty, kitty, kitty', category:'Animals', adult: false, image: 'https://upload.wikimedia.org/wikipedia/commons/3/38/500px_photo_%285526306%29.jpeg',
+            story: 'My cat, [silly-word], is the best kitten ever! Her mom was a tabby cat and her dad was a [animal] so she looks more like a(n) [adjective] [noun]. Her favorite food is [food], but only if you dye it [color]. One of our favorite games is ' +
+                'to [verb] in my bedroom (except she always wins). Yesterday I felt [emotion] because I thought she had run away...but it turns out she went to [store-name] all day because we were out of [things|plural]. What a thoughtful kitten!'
         },
         {title: '', category:'', adult: false, image:null, story: ''},
     ],
