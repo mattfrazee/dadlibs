@@ -14,14 +14,19 @@
       </p>
       <p class="story-input-title">
         {{ question.label }}
-        <span class="italic normal-case font-normal text-lg block" v-if="question.paramLabel">({{ question.paramLabel }})</span>
+        <span class="italic normal-case font-normal text-lg block" v-if="question.paramLabel">
+          ({{ question.paramLabel }})
+        </span>
       </p>
       <p class="story-input-description">
         {{ question.description }}
       </p>
-      <story-button @click="addAnswer" :adult="story.adult" class="mb-8 block mx-auto w-full sm:w-3/4 md:w-1/2 lg:w-1/4">
+      <story-button @click="addAnswer" :adult="story.adult" class="mb-4 block mx-auto w-full sm:w-3/4 md:w-1/2 lg:w-1/4">
         {{ !isLastQuestion ? 'Next' : 'Complete'}}
       </story-button>
+      <button class="back" @click="back" :class="{'invisible': !totalAnswers}">
+        Edit Last Answer
+      </button>
       <div class="question-status">
         <p>Word {{ totalAnswers + 1 }} of {{ totalQuestions }}</p>
       </div>
@@ -52,6 +57,10 @@ export default {
         }
       }
     },
+    back() {
+      this.answer = this.answers[this.answers.length - 1]
+      this.$emit('back')
+    }
   },
   computed: {
     //TODO: change input type from question (handle iOS keyboard switch from qwerty to numeric)
@@ -82,7 +91,7 @@ export default {
 
 <style scoped>
 .story-input-container {
-  @apply grid grid-cols-1 min-h-full pt-16 items-center bg-blue-600 text-white
+  @apply grid grid-cols-1 min-h-full py-16 items-center bg-blue-600 text-white
 }
 
 .story-input-container > div {
@@ -119,5 +128,12 @@ export default {
 
 .adult .question-status {
   @apply bg-slate-700
+}
+
+.back {
+  @apply text-blue-300 underline underline-offset-4 mx-auto block mb-8
+}
+.adult .back {
+  @apply text-slate-500
 }
 </style>

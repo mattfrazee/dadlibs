@@ -112,6 +112,11 @@ export default {
             story: 'My cat, [silly-word], is the best kitten ever! Her mom was a tabby cat and her dad was a [animal] so she looks more like a(n) [adjective] [noun]. Her favorite food is [food], but only if you dye it [color]. One of our favorite games is ' +
                 'to [verb] in my bedroom (except she always wins). Yesterday I felt [emotion] because I thought she had run away...but it turns out she went to [store-name] all day because we were out of [things|plural]. What a thoughtful kitten!'
         },
+        {
+            title: 'Dreaming of Butterflies', category:'Animals', adult: false, image:null,
+            story: 'Last night I dreamed I was a [adjective] butterfly with [color] splotches that looked like [thing|plural]. I flew to [place] with my best friend, [person], who was a [adjective] [insect|||An insect.|ant, spider, roach, earwig]. We ate some ' +
+                '[food] when we got there and then decided to [verb]. The dream ended when I said, “[phrase|||Saying, lyrics, or phrase.|cool beans, awesome sauce, you are what you eat, beat it]”.'
+        },
         {title: '', category:'', adult: false, image:null, story: ''},
     ],
 }

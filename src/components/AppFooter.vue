@@ -1,5 +1,5 @@
 <template>
-  <p class="bg-blue-900 header mt-6 flex items-center justify-center space-x-2 py-6">
+  <footer :class="{'adult':adult}">
     <svg class="stroke-current w-6"
          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -8,17 +8,25 @@
     <span>
       Dedicated to Ryder
     </span>
-  </p>
+  </footer>
 </template>
 
 <script>
 export default {
-  name: "StoryFooter"
+  name: "AppFooter",
+  props: {
+    adult:{
+      default: false
+    }
+  }
 }
 </script>
 
 <style scoped>
-.header {
-  @apply text-center text-sm font-bold uppercase text-blue-400
+footer {
+  @apply text-center text-sm font-bold uppercase text-blue-400 bg-blue-900 flex items-center justify-center space-x-2 py-6 fixed bottom-0 left-0 w-full z-10
+}
+.adult {
+  @apply bg-slate-900 text-white
 }
 </style>

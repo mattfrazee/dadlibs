@@ -1,18 +1,22 @@
 <template>
   <nav>
+    <!-- logo -->
     <div class="logo" @click="startOver">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 mr-1">
         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
       </svg>
-      <span>{{ headerText }}</span>
+      <span>DadLibs</span>
     </div>
     <div class="flex space-x-4 items-center menu-icons">
-      <button type="button" class="nav-menu border-2 rounded-md border-white" @click="toggleMenu">
+      <!-- toggle menu -->
+      <button type="button" class="nav-menu" @click="toggleMenu">
+        <!-- open -->
         <svg v-if="!active" class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
           <line x1="3" y1="12" x2="21" y2="12"></line>
           <line x1="3" y1="6" x2="21" y2="6"></line>
           <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
+        <!-- close -->
         <svg v-else xmlns="http://www.w3.org/2000/svg" class="stroke-current stroke-2 w-5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -34,10 +38,10 @@
 <!--    <story-button class="mb-4" v-show="story.title" v-for="story in stories" :key="story">-->
 <!--      {{ story.title }}-->
 <!--    </story-button>-->
-    <story-button class="mb-4">
+    <story-button class="mb-4" @click="mainMenu">
       Main Menu
     </story-button>
-    <story-button class="mb-4 capitalize" @click="mainMenu" v-if="story">
+    <story-button class="mb-4 capitalize" @click="selectStory" v-if="story">
       Back to {{ story.category }}
     </story-button>
     <story-button class="mb-4" @click="toggleAdultStories">
@@ -52,15 +56,12 @@ import StoryButton from "@/components/StoryButton";
 export default {
   name: 'NavHeader',
   components: {StoryButton},
-  emits: ['start-over', 'toggle-adult-menu', 'toggle-menu'],
+  emits: ['start-over', 'toggle-adult-menu', 'toggle-menu', 'select-category'],
   props: {
     toggle: Boolean,
     story: Object,
     stories: Array,
     answers: Array,
-    headerText: {
-      default: 'DadLibs'
-    }
   },
   data() {
     return {
@@ -74,6 +75,10 @@ export default {
     mainMenu() {
       this.active = !this.active
       this.$emit('start-over')
+    },
+    selectStory() {
+      this.active = !this.active
+      this.$emit('select-category', this.story.category.toLowerCase())
     },
     toggleAdultStories() {
       this.active = !this.active
@@ -118,7 +123,7 @@ button svg {
 }
 
 .menu-icon {
-  @apply w-5
+  @apply w-8
 }
 
 .menu-items {

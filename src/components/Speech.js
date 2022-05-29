@@ -101,6 +101,12 @@ export default {
             example: "bass, drums, triangle, cowbell",
         },
         {
+            id: "song",
+            label: "Song Title",
+            description: "A title of a song.",
+            example: "Welcome to the Jungle, What I Got, Mary Had a Little Lamb, Holy Wars",
+        },
+        {
             id: "time",
             label: "Time of Day",
             description: "Any time of day.",
@@ -127,8 +133,8 @@ export default {
         {
             id: "color",
             label: "Color",
-            description: "Any color",
-            example: "red, blue, white, gray",
+            description: "Any color.",
+            example: "red, sky blue, white, gray",
         },
         {
             id: "made-up-word",
@@ -159,6 +165,12 @@ export default {
             label: "Place",
             description: "A physical place or location.",
             example: "home, work, China, space",
+        },
+        {
+            id: "person",
+            label: "Person",
+            description: "A persons name or occupation.",
+            example: "Jim, janitor, Sally, cop",
         },
         {
             id: "emotion",

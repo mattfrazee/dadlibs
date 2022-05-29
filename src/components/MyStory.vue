@@ -89,7 +89,7 @@ p {
 }
 
 .button-container {
-  @apply bg-blue-500 grid grid-cols-2 gap-x-6 p-6 fixed bottom-0 left-0 w-full
+  @apply bg-blue-500 grid grid-cols-2 gap-x-6 p-6 fixed bottom-[4.5rem] left-0 w-full
 }
 
 .adult .button-container {
