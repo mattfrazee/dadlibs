@@ -4,14 +4,9 @@
         v-if="story.image"
         :src="story.image"
         :alt="story.title"
-        class="object-cover rounded-full mx-auto mt-8 -mb-2 shadow-lg h-48 w-48 md:h-72 md:w-72">
+        class="story-image">
     <h2>{{ story.title }}</h2>
     <p class="first-letter:uppercase" v-html="content"></p>
-<!--    <img-->
-<!--        v-if="story.image"-->
-<!--        :src="story.image"-->
-<!--        :alt="story.title"-->
-<!--        class="object-fill rounded-lg mx-auto shadow-lg rotate-2 mb-14 w-full sm:max-w-[75%] md:max-w-[50%]">-->
     <div class="button-container">
       <story-button @click="start" :adult="story.adult">
         Retry
@@ -71,7 +66,7 @@ export default {
 
 <style scoped>
 .story-container {
-  @apply min-h-full pt-16 pb-24 px-4 overflow-auto bg-blue-600 overflow-auto text-white z-10
+  @apply min-h-full pt-20 pb-48 px-4 overflow-auto bg-blue-600 overflow-auto text-white z-10
 }
 
 .story-container.adult {
@@ -85,7 +80,11 @@ h2 {
 
 p {
   /*font-family: 'Overpass';*/
-  @apply text-2xl mb-6 leading-10
+  @apply text-2xl leading-10
+}
+
+.story-image {
+  @apply object-cover rounded-full mx-auto shadow-lg h-48 w-48 md:h-72 md:w-72 my-4
 }
 
 .button-container {

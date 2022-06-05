@@ -1,6 +1,7 @@
 <template>
 
   <nav-header
+      :category="selectedCategory"
       :stories="sortedStories"
       :story="myStory"
       :answers="myAnswers"
@@ -98,7 +99,11 @@ export default {
     sortedStories() {
       let arr = this.stories
       if (this.selectedCategory && this.selectedCategory !== 'all') {
-        arr = arr.filter(story => story.category && story.category.toLowerCase() === this.selectedCategory)
+        // arr = arr.filter(story => story.category && String(story.category).toLowerCase() === String(this.selectedCategory).toLowerCase())
+        arr = arr.filter(story => {
+          // console.log(story.category?String(story.category).toLowerCase():story.category)
+          return story.category && String(story.category).toLowerCase() === String(this.selectedCategory).toLowerCase()
+        })
       }
       if (!this.showAdult) {
         arr = arr.filter(story => story.adult !== true)

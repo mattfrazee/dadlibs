@@ -74,11 +74,11 @@ export default {
                 'It blasted a hole in the wall and there was nothing left of [pokémon character|||The name of a Pokémon character.|Pikachu, Gangar, Charzard, Rowlet]'
         },
         {
-            title: 'Lorem ipsum dolor sit amet', category:'Development', adult: false,
+            title: 'Lorem ipsum dolor sit amet', category:'Development', adult: false, image: 'https://picsum.photos/400/300',
             story: '[Lorem ipsum|plural||Some description about it|lorem, ipsum, dolor, sit] dolor sit amet, consectetur adipisicing elit. Aliquid debitis enim esse ex illum necessitatibus optio rem sed voluptas? Accusantium consequuntur eligendi est inventore laudantium maiores neque nihil, quaerat similique?'
         },
         {
-            title: 'Lorem ipsum dolor sit amet 2', category:'Development', adult: true,
+            title: 'Lorem ipsum dolor sit amet 2', category:'Development', adult: true, image: 'https://picsum.photos/400/300',
             story: '[Lorem ipsum|plural||Some description about it|lorem, ipsum, dolor, sit] dolor sit amet, consectetur adipisicing elit. Aliquid debitis enim esse ex illum necessitatibus optio rem sed voluptas? Accusantium consequuntur eligendi est inventore laudantium maiores neque nihil, quaerat similique?'
         },
         {
@@ -91,7 +91,7 @@ export default {
         {
             title: 'Pirates', category:'Kids', adult: false, image:null,
             story: 'I became a pirate [number] years ago when [celebrity] asked me to join. I set sail on their boat, the [adjective] [thing], ' +
-                'a few days later. First we sailed to [place] in search of Captain [thing]‘s lost [made up word]. But on the way, we were ambushed by the dreaded Admiral [adjective]. ' +
+                'a few days later. First we sailed to [place] in search of Captain [thing|plural] lost [made-up-word]. But on the way, we were ambushed by the dreaded Admiral [adjective]. ' +
                 'He loaded his cannons with [animal|plural] and attacked our ship. Thankfully we outmaneuvered him and counter-attacked with our [thing] cannon. It was a pretty exciting first adventure!'
         },
         {
@@ -110,12 +110,44 @@ export default {
         {
             title: 'Here kitty, kitty, kitty', category:'Animals', adult: false, image: 'https://upload.wikimedia.org/wikipedia/commons/3/38/500px_photo_%285526306%29.jpeg',
             story: 'My cat, [silly-word], is the best kitten ever! Her mom was a tabby cat and her dad was a [animal] so she looks more like a(n) [adjective] [noun]. Her favorite food is [food], but only if you dye it [color]. One of our favorite games is ' +
-                'to [verb] in my bedroom (except she always wins). Yesterday I felt [emotion] because I thought she had run away...but it turns out she went to [store-name] all day because we were out of [things|plural]. What a thoughtful kitten!'
+                'to [verb] in my bedroom (except she always wins). Yesterday I felt [emotion] because I thought she had run away...but it turns out she went to [store name] all day because we were out of [thing|plural]. What a thoughtful kitten!'
         },
         {
             title: 'Dreaming of Butterflies', category:'Animals', adult: false, image:null,
             story: 'Last night I dreamed I was a [adjective] butterfly with [color] splotches that looked like [thing|plural]. I flew to [place] with my best friend, [person], who was a [adjective] [insect|||An insect.|ant, spider, roach, earwig]. We ate some ' +
                 '[food] when we got there and then decided to [verb]. The dream ended when I said, “[phrase|||Saying, lyrics, or phrase.|cool beans, awesome sauce, you are what you eat, beat it]”.'
+        },
+        {
+            title: 'Evolving Pokémon Isn\'t Easy', category:'Pokémon', adult: false,
+            image:'https://cdn.vox-cdn.com/thumbor/u5s50gBP6TkwTZDzwZHz8VJi4bE=/1400x1050/filters:format(png)/cdn.vox-cdn.com/uploads/chorus_asset/file/22882538/Pokemon_UNITE___Team_Up._Take_Down.___Screenshot_1.png',
+            story: 'One [adjective] day, in Pokémon city. The air was [adjective] and the temperature was [adjective]. It was just me and [pokémon] and we were headed to [place]. ' +
+                'I bumped into my friend, [friend], and they really wanted to [verb]. After we [verb|past-tense], my pokémon was evolving into [pokémon]. It was really [exclamation]!'
+        },
+        {
+            title: 'Birthday Party', category:'Holidays', adult: false,
+            image:'https://berkscountyliving.com/downloads/18196/download/iStock-918933880.jpg?cb=1155e4a7652ab617e102986ad35ab972',
+            story: 'I had the best birthday ever! My mom baked my favorite dessert, a [food] cake, and even put [number] candles on it to blow out. I invited all my friends, including my best friend [friend], to celebrate. ' +
+                'My dad hired a(n) [profession] to make balloon animals in the shape of [thing|plural]. Then we played an exciting round of pin-the-[thing] on the [animal]. [celebrity] won the [adjective] [thing] prize, but I came in a close second!'
+        },
+        {
+            title: 'Halloween', category:'Holidays', adult: false,
+            image:'https://ichef.bbci.co.uk/news/976/cpsprodpb/753F/production/_115151003_smallergettyimages-1184857940.jpg',
+            story: 'I was worried my Halloween was off to a bad start when a black [animal] crossed my path, but it turned out ok. My best friend, [friend], and I went trick-or-treating the minute it started getting dark. I dressed as a [adjective] [scary-thing||A Scary Thing|Something scary.|clown, vampire, spider, murder] ' +
+                'and my friend was a [adjective] [thing]. The first few houses gave out their traditional [food] instead of candy. When we reached the end of the block, my friend dared me to ring the doorbell on the spooky house at the top of the hill. ' +
+                'I tip-toed to the door and just when I was going to push the button (a) [monster||A Monster|A name for a monster|cookie monster, boogie man, the blob, swamp thing] answered the door. I screamed tried to [verb] until I realized it was just a mask. ' +
+                'The old lady behind the mask gave me [number] candy bars since she didn\'t have many visitors!'
+        },
+        {
+            title: 'Thanksgiving', category:'Holidays', adult: false,
+            image:'https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU3ODc5MDg2NzAwNTA0Mzkz/thanksgiving-hero.jpg',
+            story: 'I think my teacher might be mistaken about Thanksgiving. This year she told us that the pilgrims came to America on the Nina, the [person], and the [adjective] [thing]. When they all arrived, they immediately became [profession|plural]. Thanksgiving had nothing to do with the harvest. Instead, ' +
+                'the pilgrims were excited they had taught a [animal] to [verb] [adverb|ly]. They didn\'t even eat pumpkin pie. The only thing pilgrims ate were [adjective] [food|plural]. She also said they landed at [place] instead of Plymouth Rock. Can you believe that?'
+        },
+        {
+            title: 'Now We\'re Cookin\'', category:'General', adult: false,
+            image:'https://bloximages.newyork1.vip.townnews.com/feastandfield.net/content/tncms/assets/v3/editorial/6/de/6de03e56-797e-11ec-a508-1b96384426ea/61e9a7eb41105.cover.jpg?resize=400%2C267',
+            story: 'I just finished cooking school at [person]\'s School of [adjective] [thing|plural]. The last day of classes, I wow-ed my teacher with a [color] [food] from [place]. I prepared it traditionally, so it was baked with [number] [thing|plural]. ' +
+                'The instantly my teacher tried it, he exclaimed, \'[phrase||A Phrase|A commonly used word or quote.|it is what it is, bueño, cool, i know right]\'. That\'s when I knew I would have a [adjective] career ahead of me!'
         },
         {title: '', category:'', adult: false, image:null, story: ''},
     ],
