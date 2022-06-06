@@ -34,6 +34,7 @@ warning "*******************************" bold
 echo -n "You are about to publish code to production. Proceed? [y/N]: "
 read proceed
 if [[ $proceed != 'y' && $proceed != 'Y' ]]; then
+  error "Aborted." bold
   exit 1;
 fi
 
