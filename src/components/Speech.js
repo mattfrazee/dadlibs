@@ -162,6 +162,12 @@ export default {
             "example": "my dog, John, mom, neighbor"
         },
         {
+            "id": "phrase",
+            "label": "Phrase",
+            "description": "A commonly used word or quote.",
+            "example": "it is what it is, bueño, cool, i know right"
+        },
+        {
             "id": "place",
             "label": "Place",
             "description": "A physical place or location.",
@@ -239,6 +245,12 @@ export default {
             "label": "Time of Day",
             "description": "Any time of day.",
             "example": "noon, 3:30pm, dinner time, midnight"
+        },
+        {
+            "id": "vehicle",
+            "label": "Vehicle",
+            "description": "A thing used to transport people or goods.",
+            "example": "bicycle, car, truck, plane"
         },
         {
             "id": "verb",

@@ -115,10 +115,10 @@ export default {
         {
             title: 'Dreaming of Butterflies', category:'Animals', adult: false, image:null,
             story: 'Last night I dreamed I was a [adjective] butterfly with [color] splotches that looked like [thing|plural]. I flew to [place] with my best friend, [person], who was a [adjective] [insect|||An insect.|ant, spider, roach, earwig]. We ate some ' +
-                '[food] when we got there and then decided to [verb]. The dream ended when I said, “[phrase|||Saying, lyrics, or phrase.|cool beans, awesome sauce, you are what you eat, beat it]”.'
+                '[food] when we got there and then decided to [verb]. The dream ended when I said, “[phrase]”.'
         },
         {
-            title: 'Evolving Pokémon Isn\'t Easy', category:'Pokémon', adult: false,
+            title: 'Evolving Pokémon Isn’t Easy', category:'Pokémon', adult: false,
             image:'https://cdn.vox-cdn.com/thumbor/u5s50gBP6TkwTZDzwZHz8VJi4bE=/1400x1050/filters:format(png)/cdn.vox-cdn.com/uploads/chorus_asset/file/22882538/Pokemon_UNITE___Team_Up._Take_Down.___Screenshot_1.png',
             story: 'One [adjective] day, in Pokémon city. The air was [adjective] and the temperature was [adjective]. It was just me and [pokémon] and we were headed to [place]. ' +
                 'I bumped into my friend, [friend], and they really wanted to [verb]. After we [verb|past-tense], my pokémon was evolving into [pokémon]. It was really [exclamation]!'
@@ -135,20 +135,31 @@ export default {
             story: 'I was worried my Halloween was off to a bad start when a black [animal] crossed my path, but it turned out ok. My best friend, [friend], and I went trick-or-treating the minute it started getting dark. I dressed as a [adjective] [scary-thing||A Scary Thing|Something scary.|clown, vampire, spider, murder] ' +
                 'and my friend was a [adjective] [thing]. The first few houses gave out their traditional [food] instead of candy. When we reached the end of the block, my friend dared me to ring the doorbell on the spooky house at the top of the hill. ' +
                 'I tip-toed to the door and just when I was going to push the button (a) [monster||A Monster|A name for a monster|cookie monster, boogie man, the blob, swamp thing] answered the door. I screamed tried to [verb] until I realized it was just a mask. ' +
-                'The old lady behind the mask gave me [number] candy bars since she didn\'t have many visitors!'
+                'The old lady behind the mask gave me [number] candy bars since she didn’t have many visitors!'
         },
         {
             title: 'Thanksgiving', category:'Holidays', adult: false,
             image:'https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU3ODc5MDg2NzAwNTA0Mzkz/thanksgiving-hero.jpg',
             story: 'I think my teacher might be mistaken about Thanksgiving. This year she told us that the pilgrims came to America on the Nina, the [person], and the [adjective] [thing]. When they all arrived, they immediately became [profession|plural]. Thanksgiving had nothing to do with the harvest. Instead, ' +
-                'the pilgrims were excited they had taught a [animal] to [verb] [adverb|ly]. They didn\'t even eat pumpkin pie. The only thing pilgrims ate were [adjective] [food|plural]. She also said they landed at [place] instead of Plymouth Rock. Can you believe that?'
+                'the pilgrims were excited they had taught a [animal] to [verb] [adverb|ly]. They didn’t even eat pumpkin pie. The only thing pilgrims ate were [adjective] [food|plural]. She also said they landed at [place] instead of Plymouth Rock. Can you believe that?'
         },
         {
-            title: 'Now We\'re Cookin\'', category:'General', adult: false,
+            title: 'Now We’re Cookin’', category:'Food', adult: false,
             image:'https://bloximages.newyork1.vip.townnews.com/feastandfield.net/content/tncms/assets/v3/editorial/6/de/6de03e56-797e-11ec-a508-1b96384426ea/61e9a7eb41105.cover.jpg?resize=400%2C267',
-            story: 'I just finished cooking school at [person]\'s School of [adjective] [thing|plural]. The last day of classes, I wow-ed my teacher with a [color] [food] from [place]. I prepared it traditionally, so it was baked with [number] [thing|plural]. ' +
-                'The instantly my teacher tried it, he exclaimed, \'[phrase||A Phrase|A commonly used word or quote.|it is what it is, bueño, cool, i know right]\'. That\'s when I knew I would have a [adjective] career ahead of me!'
+            story: 'I just finished cooking school at [person]’s School of [adjective] [thing|plural]. The last day of classes, I wow-ed my teacher with a [color] [food] from [place]. I prepared it traditionally, so it was baked with [number] [thing|plural]. ' +
+                'The instantly my teacher tried it, he exclaimed, “[phrase]”. That’s when I knew I would have a [adjective] career ahead of me!'
         },
-        {title: '', category:'', adult: false, image:null, story: ''},
+        {
+            title: 'Tacos', category:'Food', adult: false, image:null,
+            story: 'Today I went to my favorite taco stand called the [adjective] [food]. Unlike most food stands, they cook and prepare the food in a [vehicle] while you [verb]. The best thing on the menu is the [color] [noun]. ' +
+                'Instead of ground beef they fill the taco with [food|plural], cheese, and top it off with a salsa made from [food|plural]. If that doesn’t make your mouth water, then it’s just like [person] always says, “[phrase]!”'
+        },
+        {
+            title: 'Job Skills', category: 'General', adult: false, image: null,
+            story: 'Today a [profession] named [noun] came to our school to talk to us about her job. She said the most important skill you need to know to do her job is to be able to [verb] around (a) [adjective] [noun]. ' +
+                'She said it was easy for her to learn her job because she loved to [verb] when she was my age–and that helps a lot! If you’re considering her profession, I hope you can be near (a) [adjective] [noun]. That’s very important! ' +
+                'If you get too distracted in that situation you won’t be able to [verb] next to (a) [noun]!'
+        },
+        {title: '', category: '', adult: false, image: null, story: ''},
     ],
 }
