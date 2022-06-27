@@ -138,6 +138,12 @@ export default {
             "example": "dick, cock, schlong, monster"
         },
         {
+            "id": "name",
+            "label": "Name",
+            "description": "A person’s name.",
+            "example": "Jim, John, Sally, Jane"
+        },
+        {
             "id": "noun",
             "label": "Noun",
             "description": "A noun is the name of a person, place, thing, or idea.",
@@ -152,7 +158,7 @@ export default {
         {
             "id": "person",
             "label": "Person",
-            "description": "A persons name or occupation.",
+            "description": "A person’s name or occupation.",
             "example": "Jim, janitor, Sally, cop"
         },
         {

@@ -1,6 +1,8 @@
 <template>
   <div class="story-input-container" :class="{'adult': story.adult}">
+    <h2>&ldquo;{{ story.title }}&rdquo;</h2>
     <div>
+<!--      <p class="absolute mt-4 text-xs uppercase font-bold right-8 p-2 bg-black rounded">{{ totalAnswers + 1 }} of {{ totalQuestions }}</p>-->
       <input :type="inputType"
              ref="answer"
              v-model="answer"
@@ -31,6 +33,7 @@
         <p>Word {{ totalAnswers + 1 }} of {{ totalQuestions }}</p>
       </div>
     </div>
+    <img v-if="story.image" :src="story.image" :alt="story.title">
   </div>
 </template>
 
@@ -94,8 +97,16 @@ export default {
   @apply grid grid-cols-1 min-h-full py-16 items-center bg-blue-600 text-white
 }
 
+.story-input-container > h2 {
+  @apply absolute z-[1] w-full top-20 text-center text-2xl p-4 text-white opacity-50 italic
+}
+
 .story-input-container > div {
-  @apply p-8
+  @apply p-8 relative z-[1]
+}
+
+.story-input-container > img {
+  @apply object-cover absolute h-full w-full filter brightness-[0.2]
 }
 
 .adult {

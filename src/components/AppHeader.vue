@@ -34,6 +34,7 @@
 <!--      </button>-->
     </div>
   </nav>
+  <!-- off canvas nav -->
   <div :class="{'left-0':active, '-left-full':!active}" class="menu-items">
 <!--    <story-button class="mb-4" v-show="story.title" v-for="story in stories" :key="story">-->
 <!--      {{ story.title }}-->
@@ -48,6 +49,7 @@
       Turn {{ toggle ? 'OFF' : 'ON'}} Adult Content
     </story-button>
   </div>
+  <!-- /off canvas nav -->
 </template>
 
 <script>

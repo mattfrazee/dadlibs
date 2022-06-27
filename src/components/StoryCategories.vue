@@ -30,11 +30,9 @@ export default {
     categories() {
       let categories = []
       this.stories.filter(story => !!story.category || story.adult).map(story => {
-        if (story.adult) {
-          story.category = 'adult'
-        }
-        if (!categories.includes(story.category.toLowerCase())) {
-          categories.push(story.category.toLowerCase())
+        let category = story.category.toLowerCase()
+        if (!categories.includes(category)) {
+          categories.push(category)
         }
         return story.category
       })

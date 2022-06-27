@@ -20,7 +20,6 @@
   <story-menu header="Select a Story" v-if="canShowStoryMenu">
     <template v-for="story in sortedStories" :key="story">
       <menu-button
-          v-if="story.title && story.story"
           :adult="story.adult"
           :complete="story.complete"
           class="w-full sm:w-3/4 md:w-1/2 lg:w-1/4"
@@ -28,7 +27,7 @@
     </template>
     <menu-button class="go-back"
         v-if="sortedStories.length"
-        @click="selectedCategory = null">Go Back</menu-button>
+        @click="startOver">Go Back</menu-button>
   </story-menu>
 
   <story-input v-if="myStory && !myStory.complete"
@@ -78,6 +77,10 @@ export default {
   // beforeMount() {
     // this.myStory = this.stories[0]
   // },
+  // mounted() {
+  //   localStorage.setItem('test', JSON.stringify(this.stories))
+  //   localStorage.removeItem('test')
+  // },
   computed: {
     canShowCategories() {
       return this.selectedCategory === null
@@ -99,11 +102,7 @@ export default {
     sortedStories() {
       let arr = this.stories
       if (this.selectedCategory && this.selectedCategory !== 'all') {
-        // arr = arr.filter(story => story.category && String(story.category).toLowerCase() === String(this.selectedCategory).toLowerCase())
-        arr = arr.filter(story => {
-          // console.log(story.category?String(story.category).toLowerCase():story.category)
-          return story.category && String(story.category).toLowerCase() === String(this.selectedCategory).toLowerCase()
-        })
+        arr = arr.filter(story => String(story.category).toLowerCase() === String(this.selectedCategory).toLowerCase())
       }
       if (!this.showAdult) {
         arr = arr.filter(story => story.adult !== true)

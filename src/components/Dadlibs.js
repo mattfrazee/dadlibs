@@ -1,6 +1,14 @@
 export default {
     stories: [
         {
+            title: 'Lorem ipsum dolor sit amet', category:'Development', adult: false, image: 'https://picsum.photos/400/300',
+            story: '[Lorem ipsum|plural||Some description about it|lorem, ipsum, dolor, sit] dolor sit amet, consectetur adipisicing elit. Aliquid debitis enim esse ex illum necessitatibus optio rem sed voluptas? Accusantium consequuntur eligendi est inventore laudantium maiores neque nihil, quaerat similique?'
+        },
+        {
+            title: 'Lorem ipsum dolor sit amet 2', category:'Development', adult: true, image: 'https://picsum.photos/400/300',
+            story: '[Lorem ipsum|||Some description about it|lorem, ipsum, dolor, sit] dolor sit amet, consectetur adipisicing elit. Aliquid debitis enim esse ex illum necessitatibus optio rem sed voluptas? Accusantium consequuntur eligendi est inventore laudantium maiores neque nihil, quaerat similique?'
+        },
+        {
             title: "Looking Forward to Your Death", adult: false,
             story: "I was admiring my [female-relative]’s [noun] when she surprised me by [verb|ing], " +
                 "“When I die, I’m leaving you my [noun] in my will.” I was [emotion], perhaps too much. " +
@@ -74,14 +82,6 @@ export default {
                 'It blasted a hole in the wall and there was nothing left of [pokémon character|||The name of a Pokémon character.|Pikachu, Gangar, Charzard, Rowlet]'
         },
         {
-            title: 'Lorem ipsum dolor sit amet', category:'Development', adult: false, image: 'https://picsum.photos/400/300',
-            story: '[Lorem ipsum|plural||Some description about it|lorem, ipsum, dolor, sit] dolor sit amet, consectetur adipisicing elit. Aliquid debitis enim esse ex illum necessitatibus optio rem sed voluptas? Accusantium consequuntur eligendi est inventore laudantium maiores neque nihil, quaerat similique?'
-        },
-        {
-            title: 'Lorem ipsum dolor sit amet 2', category:'Development', adult: true, image: 'https://picsum.photos/400/300',
-            story: '[Lorem ipsum|plural||Some description about it|lorem, ipsum, dolor, sit] dolor sit amet, consectetur adipisicing elit. Aliquid debitis enim esse ex illum necessitatibus optio rem sed voluptas? Accusantium consequuntur eligendi est inventore laudantium maiores neque nihil, quaerat similique?'
-        },
-        {
             title: 'A Day in November', category:'Kids', adult: false,
             story: 'It was a [adjective], cold November day. I woke up to the smell of [type of bird|plural||A type or name of a bird.|chicken, oriole, parrot, blue jay] ' +
                 'roasting in the [room in a house|||A room in a house.|living room, kitchen, bathroom, garage] downstairs. I [verb|past-tense] down the stairs to see if I could help [verb] the food. ' +
@@ -132,34 +132,50 @@ export default {
         {
             title: 'Halloween', category:'Holidays', adult: false,
             image:'https://ichef.bbci.co.uk/news/976/cpsprodpb/753F/production/_115151003_smallergettyimages-1184857940.jpg',
-            story: 'I was worried my Halloween was off to a bad start when a black [animal] crossed my path, but it turned out ok. My best friend, [friend], and I went trick-or-treating the minute it started getting dark. I dressed as a [adjective] [scary-thing||A Scary Thing|Something scary.|clown, vampire, spider, murder] ' +
-                'and my friend was a [adjective] [thing]. The first few houses gave out their traditional [food] instead of candy. When we reached the end of the block, my friend dared me to ring the doorbell on the spooky house at the top of the hill. ' +
-                'I tip-toed to the door and just when I was going to push the button (a) [monster||A Monster|A name for a monster|cookie monster, boogie man, the blob, swamp thing] answered the door. I screamed tried to [verb] until I realized it was just a mask. ' +
-                'The old lady behind the mask gave me [number] candy bars since she didn’t have many visitors!'
+            story: 'I was worried my Halloween was off to a bad start when a black [animal] crossed my path, but it ' +
+                'turned out ok. My best friend, [friend], and I went trick-or-treating the minute it started getting ' +
+                'dark. I dressed as a [adjective] [scary-thing||A Scary Thing|Something scary.|clown, vampire, spider, murder] ' +
+                'and my friend was a [adjective] [thing]. The first few houses gave out their traditional [food] ' +
+                'instead of candy. When we reached the end of the block, my friend dared me to ring the doorbell on ' +
+                'the spooky house at the top of the hill. I tip-toed to the door and just when I was going to push the ' +
+                'button (a) [monster||A Monster|A name for a monster|cookie monster, boogie man, the blob, swamp thing] ' +
+                'answered the door. I screamed tried to [verb] until I realized it was just a mask. The old lady behind ' +
+                'the mask gave me [number] candy bars since she didn’t have many visitors!'
         },
         {
             title: 'Thanksgiving', category:'Holidays', adult: false,
             image:'https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU3ODc5MDg2NzAwNTA0Mzkz/thanksgiving-hero.jpg',
-            story: 'I think my teacher might be mistaken about Thanksgiving. This year she told us that the pilgrims came to America on the Nina, the [person], and the [adjective] [thing]. When they all arrived, they immediately became [profession|plural]. Thanksgiving had nothing to do with the harvest. Instead, ' +
-                'the pilgrims were excited they had taught a [animal] to [verb] [adverb|ly]. They didn’t even eat pumpkin pie. The only thing pilgrims ate were [adjective] [food|plural]. She also said they landed at [place] instead of Plymouth Rock. Can you believe that?'
+            story: '[person-in-room] thinks my teacher might be mistaken about Thanksgiving. This year, they told ' +
+                'everyone that the pilgrims came to America on the Niña, the [person], and the [adjective] [thing]. ' +
+                'When they all arrived, they immediately became [emotion]. Thanksgiving had nothing to do with the ' +
+                'harvest. Instead, the pilgrims were excited they had taught a [animal] to [verb] [adverb|ly]. They ' +
+                'didn’t even eat pumpkin pie. The only thing pilgrims ate were [adjective] [food|plural]. Also, they ' +
+                'landed at [place] instead of Plymouth Rock. Can you believe that?'
         },
         {
             title: 'Now We’re Cookin’', category:'Food', adult: false,
             image:'https://bloximages.newyork1.vip.townnews.com/feastandfield.net/content/tncms/assets/v3/editorial/6/de/6de03e56-797e-11ec-a508-1b96384426ea/61e9a7eb41105.cover.jpg?resize=400%2C267',
-            story: 'I just finished cooking school at [person]’s School of [adjective] [thing|plural]. The last day of classes, I wow-ed my teacher with a [color] [food] from [place]. I prepared it traditionally, so it was baked with [number] [thing|plural]. ' +
-                'The instantly my teacher tried it, he exclaimed, “[phrase]”. That’s when I knew I would have a [adjective] career ahead of me!'
+            story: 'I just finished cooking school at [person]’s School of [adjective] [thing|plural]. The last day of ' +
+                'classes, I wow-ed my teacher with a [color] [food] from [place]. I prepared it traditionally, so it ' +
+                'was baked with [number] [thing|plural]. The instantly my teacher tried it, he exclaimed, “[phrase]”. ' +
+                'That’s when I knew I would have a [adjective] career ahead of me!'
         },
         {
             title: 'Tacos', category:'Food', adult: false, image:null,
-            story: 'Today I went to my favorite taco stand called the [adjective] [food]. Unlike most food stands, they cook and prepare the food in a [vehicle] while you [verb]. The best thing on the menu is the [color] [noun]. ' +
-                'Instead of ground beef they fill the taco with [food|plural], cheese, and top it off with a salsa made from [food|plural]. If that doesn’t make your mouth water, then it’s just like [person] always says, “[phrase]!”'
+            story: 'Today I went to my favorite taco stand called the [adjective] [food]. Unlike most food stands, they ' +
+                'cook and prepare the food in a [vehicle] while you [verb]. The best thing on the menu is the [color] ' +
+                '[noun]. Instead of ground beef they fill the taco with [food|plural], cheese, and top it off with a ' +
+                'salsa made from [food|plural]. If that doesn’t make your mouth water, then it’s just like [person] ' +
+                'always says, “[phrase]!”'
         },
         {
             title: 'Job Skills', category: 'General', adult: false, image: null,
-            story: 'Today a [profession] named [noun] came to our school to talk to us about her job. She said the most important skill you need to know to do her job is to be able to [verb] around (a) [adjective] [noun]. ' +
-                'She said it was easy for her to learn her job because she loved to [verb] when she was my age–and that helps a lot! If you’re considering her profession, I hope you can be near (a) [adjective] [noun]. That’s very important! ' +
-                'If you get too distracted in that situation you won’t be able to [verb] next to (a) [noun]!'
+            story: 'Today a [profession] named, [name], came to our school to talk to us about their job. [name] said ' +
+                'the most important skill you need to know is to be able to [verb] around a [adjective] [noun]. ' +
+                '[name] said, when she was my age it was easy to learn the job because they loved to [verb], which ' +
+                'helps a lot! If you’re considering this profession, I hope you can be near a [adjective] [noun]. ' +
+                'That’s very important! If you get too distracted in that situation you won’t be able to [verb] next to' +
+                ' a [noun]!'
         },
-        {title: '', category: '', adult: false, image: null, story: ''},
     ],
 }
